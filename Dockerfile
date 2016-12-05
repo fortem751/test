@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhel7:latest
+\FROM registry.access.redhat.com/rhel7:latest
 #FROM openshift/base-centos7
 
 MAINTAINER DevOps Team <devops@openlaws.com>
@@ -50,8 +50,8 @@ WORKDIR /var/lib/neo4j
 
 # Drop the root user and make the content of /var/lib/neo4j owned by user 1001
 RUN chgrp -R 0 /var/lib/neo4j \
-    && chmod -R g+rw /var/lib/neo4j 
-    && chmod -R g+rw /data
+    && chmod -R g+rw /var/lib/neo4j \
+    && chmod -R g+rw /data 
 
 # This default user is created in the openshift/rhel7 image
 # USER 1001
