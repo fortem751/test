@@ -44,7 +44,7 @@ COPY container-files/ /
 RUN set -x \
     && chmod 755 /docker-entrypoint.sh \
     && chmod 755 /healthcheck.sh 
-    && chmod 755 /pod_endpoints.rb
+#    && chmod 755 /pod_endpoints.rb
 
 WORKDIR /var/lib/neo4j
 
