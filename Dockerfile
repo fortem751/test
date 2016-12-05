@@ -1,4 +1,4 @@
-\FROM registry.access.redhat.com/rhel7:latest
+FROM registry.access.redhat.com/rhel7:latest
 #FROM openshift/base-centos7
 
 MAINTAINER DevOps Team <devops@openlaws.com>
