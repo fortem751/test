@@ -54,7 +54,7 @@ RUN chgrp -R 0 /var/lib/neo4j \
     && chmod -R g+rw /data 
 
 # This default user is created in the openshift/rhel7 image
-# USER 1001
+ USER 1001
 
 # Set the default port for applications built using this image
 EXPOSE 7474 7473 7687 5001 6001
