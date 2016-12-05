@@ -51,7 +51,7 @@ VOLUME /data
 
 
 # Drop the root user and make the content of /var/lib/neo4j owned by user 1001
-RUN chgrp -R 0 /var/lib/neo4j / \
+RUN chgrp -R 0 /var/lib/neo4j /data \
     && chmod -R g+rw /var/lib/neo4j \
     && chmod -R a+rw /data 
 
