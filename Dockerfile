@@ -29,7 +29,7 @@ RUN yum clean all \
     && rm /etc/localtime \
     && ln -s /usr/share/zoneinfo/GMT /etc/localtime
 
- VOLUME /data
+# VOLUME /data
 
 # Install neo4j :
 RUN set -x \
@@ -47,11 +47,12 @@ RUN set -x \
 #    && chmod 755 /pod_endpoints.rb
 
 WORKDIR /var/lib/neo4j
+VOLUME /data
 
 # Drop the root user and make the content of /var/lib/neo4j owned by user 1001
 RUN chgrp -R 0 /var/lib/neo4j \
     && chmod -R g+rw /var/lib/neo4j \
-    && chmod -R g+rw /data 
+    && chmod -R a+rw /data 
 
 # This default user is created in the openshift/rhel7 image
  USER 1001
